@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>APEX_CONSULT | PRECISIÓN KINÉTICA</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Geist:wght@300;400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;family=Space+Grotesk:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#b3c5ff",
+                        "tertiary": "#b9c8de",
+                        "on-tertiary-container": "#1c2b3c",
+                        "secondary-container": "#00d2fd",
+                        "secondary-fixed-dim": "#3cd7ff",
+                        "inverse-primary": "#0054d6",
+                        "on-surface": "#e5e2e3",
+                        "primary": "#b3c5ff",
+                        "on-tertiary-fixed-variant": "#39485a",
+                        "on-tertiary": "#233143",
+                        "surface-bright": "#3a393a",
+                        "on-primary-container": "#f8f7ff",
+                        "on-secondary-fixed": "#001f27",
+                        "surface-tint": "#b3c5ff",
+                        "on-background": "#e5e2e3",
+                        "tertiary-container": "#8392a6",
+                        "surface-container-highest": "#353436",
+                        "surface-container-lowest": "#0e0e0f",
+                        "tertiary-fixed": "#d4e4fa",
+                        "error": "#ffb4ab",
+                        "outline": "#8c90a1",
+                        "secondary": "#a2e7ff",
+                        "secondary-fixed": "#b4ebff",
+                        "primary-container": "#0066ff",
+                        "on-tertiary-fixed": "#0d1c2d",
+                        "inverse-on-surface": "#313031",
+                        "error-container": "#93000a",
+                        "on-primary-fixed": "#001849",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary": "#003642",
+                        "surface-container": "#201f20",
+                        "primary-fixed": "#dae1ff",
+                        "surface-variant": "#353436",
+                        "background": "#131314",
+                        "on-surface-variant": "#c2c6d8",
+                        "surface-container-high": "#2a2a2b",
+                        "surface": "#131314",
+                        "inverse-surface": "#e5e2e3",
+                        "on-secondary-container": "#005669",
+                        "on-primary": "#002b75",
+                        "surface-container-low": "#1c1b1c",
+                        "surface-dim": "#131314",
+                        "outline-variant": "#424656",
+                        "on-error": "#690005",
+                        "on-primary-fixed-variant": "#003fa4",
+                        "on-secondary-fixed-variant": "#004e5f",
+                        "tertiary-fixed-dim": "#b9c8de"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "container-max": "1440px",
+                        "unit": "4px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Space Grotesk"],
+                        "label-mono": ["JetBrains Mono"],
+                        "body-lg": ["Geist"],
+                        "body-md": ["Geist"],
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-md": ["Space Grotesk"],
+                        "display-lg": ["Space Grotesk"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-mono": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "700"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        .technical-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(179, 197, 255, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(179, 197, 255, 0.05) 1px, transparent 1px);
+        }
+
+        .blue-glow {
+            box-shadow: 0 0 40px 10px rgba(179, 197, 255, 0.15);
+        }
+
+        .scanline {
+            background: linear-gradient(to bottom, rgba(179, 197, 255, 0) 50%, rgba(179, 197, 255, 0.05) 50%);
+            background-size: 100% 4px;
+        }
+
+        .kinetic-text {
+            text-shadow: 0 0 12px rgba(179, 197, 255, 0.5);
+        }
+
+        @keyframes pulse-dot {
+            0% { transform: scale(0.95); opacity: 0.7; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(0.95); opacity: 0.7; }
+        }
+        .live-pulse {
+            animation: pulse-dot 2s infinite;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-tertiary/20">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-3">
+<img alt="APEX_CONSULT Logo" class="h-10 w-10 text-primary" src="https://lh3.googleusercontent.com/aida/AP1WRLvkVH_ZUiqeOs96Pc8lkGVkpBB4tevLbN4EdWmYCAoiPAE_asgMMrhwO5Ox83VZhfZ5PcXnDdhAk-W2nR4ecu25Zvq8jDi8Y1iDJjYcbDUpEGE4gFlDzgfst6R7FTY6-cE5-hR0Jz22mV9bwYE8vCOM2tepqRxZOELGjMnTXK6rMRHWzHw3uE00zVSooDhoh0PUya8QzcG94DSkdi8BAafMY7YXkhkzL-siLPr8tzRqrm7KRYx1DjfOmtU"/>
+<div class="font-display-lg-mobile text-display-lg-mobile tracking-tighter text-primary">APEX_CONSULT</div>
+</div>
+<div class="hidden md:flex gap-8">
+<a class="font-label-caps text-label-caps text-primary border-b border-primary pb-1 Active: skew-x-[-12deg] transition-transform" href="#">Services</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors hover:bg-primary/10 transition-all duration-100" href="#">Portfolio</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors hover:bg-primary/10 transition-all duration-100" href="#">Telemetry</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors hover:bg-primary/10 transition-all duration-100" href="#">Support</a>
+</div>
+<button class="bg-primary text-on-primary-container font-label-caps text-label-caps py-2 px-6 hover:bg-primary/90 transition-all Active: skew-x-[-12deg]">
+            LAUNCH TERMINAL
+        </button>
+</div>
+</nav>
+<main class="relative pt-24 overflow-hidden technical-grid">
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex items-center px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Decorative Elements -->
+<div class="absolute right-0 top-1/4 opacity-10 pointer-events-none hidden lg:block">
+<span class="font-label-mono text-[200px] leading-none text-tertiary opacity-20 select-none">KINÉTICA</span>
+</div>
+<div class="z-10 w-full max-w-4xl">
+<div class="flex items-center gap-3 mb-6 bg-surface-container-low w-fit px-4 py-1 border border-tertiary/20 rounded-sm">
+<span class="live-pulse w-2 h-2 rounded-full bg-secondary-container"></span>
+<span class="font-label-mono text-label-mono text-secondary">SYSTEMS ONLINE: v4.2.0-STABLE</span>
+</div>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface uppercase mb-8 leading-none kinetic-text">
+                PRECISIÓN KINÉTICA, <br/>
+<span class="text-primary">RENDIMIENTO ABSOLUTO</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-12">
+                Consultoría técnica de alto nivel para ecosistemas de alta frecuencia. Fusionamos ingeniería de automovilismo con infraestructura financiera para una ejecución sin fricciones.
+            </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary text-on-primary px-8 py-4 font-label-caps text-label-caps font-bold transition-all hover:brightness-110 active:scale-95 border-b-4 border-on-primary-container">
+                    EMPEZAR PROYECTO
+                </button>
+<button class="border border-secondary text-secondary px-8 py-4 font-label-caps text-label-caps font-bold transition-all hover:bg-secondary/10">
+                    VER TELEMETRÍA
+                </button>
+</div>
+</div>
+<!-- Kinetic Image Placeholder -->
+<div class="absolute right-margin-desktop top-1/2 -translate-y-1/2 w-[500px] h-[600px] hidden xl:block rounded-sm overflow-hidden border border-tertiary/10 blue-glow">
+<img alt="A high-performance technical visual showing a sleek, carbon-fiber textured racing engine integrated with holographic financial data charts. The lighting is low-key with intense blue rim light highlighting the mechanical edges. The scene is shot in a dark, hyper-modern engineering lab with visible structural grids. Cinematic 8k rendering, sharp focus on the intersection of metal and digital data." class="w-full h-full object-cover grayscale brightness-75 hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD13YkeFpttoxLkk79RHgM2YOfN-k03w6SkCbD1T_eRRo3CLQ6u_OSbic925h_If64uZUPdHILMGvMvoNGfTxGWz4jEvZZMRJPqolsBPO8jxSFGs85ghyoLRv72TVdVJLsUbNFaTuuKPMdryAZ2PuCmrowrBYcknrHPlPyfpDLUq49IYQS42sZksIwdN5q4GT6xdfAzBAiJ9xM24ezhNE7sry1HLFXGqhRku4w8eWMtYht5IRcnvjQirTFyWfaGF4d_ZrmmB_R6o-M"/>
+<div class="absolute inset-0 scanline pointer-events-none opacity-20"></div>
+<!-- Corner Accents -->
+<div class="absolute top-0 right-0 w-4 h-4 bg-primary"></div>
+</div>
+</section>
+<!-- Bento Grid Services -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+<div class="space-y-4">
+<span class="font-label-mono text-label-mono text-primary">[ CAPACIDADES_BASE ]</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">SERVICIOS TÉCNICOS</h2>
+</div>
+<div class="w-full md:w-1/3 h-[1px] bg-tertiary/20 mb-3"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Tech Consultancy -->
+<div class="md:col-span-7 bg-surface-container-low border border-tertiary/10 p-8 group hover:border-primary/40 transition-colors relative">
+<div class="absolute top-2 right-2 w-1 h-1 bg-primary"></div>
+<span class="material-symbols-outlined text-primary text-4xl mb-6">insights</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Tech Consultancy</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 max-w-lg">
+                    Análisis de arquitectura de sistemas críticos. Optimizamos la latencia de extremo a extremo utilizando metodologías de ingeniería de precisión.
+                </p>
+<ul class="font-label-mono text-label-mono space-y-3">
+<li class="flex items-center gap-2 hover:translate-x-1 transition-transform cursor-pointer"><span class="w-1.5 h-1.5 bg-secondary"></span> Auditoría de Infraestructura</li>
+<li class="flex items-center gap-2 hover:translate-x-1 transition-transform cursor-pointer"><span class="w-1.5 h-1.5 bg-secondary"></span> Estrategia de Redundancia</li>
+<li class="flex items-center gap-2 hover:translate-x-1 transition-transform cursor-pointer"><span class="w-1.5 h-1.5 bg-secondary"></span> Optimización de Recursos</li>
+</ul>
+</div>
+<!-- Software Development -->
+<div class="md:col-span-5 bg-surface-container-lowest border border-tertiary/10 p-8 group hover:border-secondary/40 transition-colors relative overflow-hidden">
+<div class="absolute top-2 right-2 w-1 h-1 bg-secondary"></div>
+<span class="material-symbols-outlined text-secondary text-4xl mb-6">terminal</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Software Dev</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                    Desarrollo a medida con enfoque en rendimiento bruto y seguridad de nivel bancario.
+                </p>
+<div class="h-32 bg-background border border-tertiary/5 rounded-sm p-4 overflow-hidden relative">
+<div class="font-label-mono text-[10px] text-tertiary opacity-40 leading-tight">
+                        &gt; system_boot.sh initiated...<br/>
+                        &gt; kernel_version: 6.1.0-apex<br/>
+                        &gt; loading secure_sockets.h... [OK]<br/>
+                        &gt; initializing neural_net_engine... [OK]<br/>
+                        &gt; latency check: 0.12ms<br/>
+</div>
+<div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-surface-container-lowest to-transparent"></div>
+</div>
+</div>
+<!-- Live Status Support -->
+<div class="md:col-span-12 bg-surface-container p-1 border-t border-tertiary/20">
+<div class="flex flex-wrap items-center justify-between gap-4 p-6 bg-surface-container-high border border-tertiary/10">
+<div class="flex items-center gap-6">
+<div class="relative">
+<span class="material-symbols-outlined text-primary text-5xl">support_agent</span>
+<span class="absolute -top-1 -right-1 live-pulse w-4 h-4 bg-secondary-container rounded-full border-2 border-surface-container-high"></span>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-secondary mb-1">TECHNICAL SUPPORT [LIVE]</h4>
+<p class="font-body-md text-body-md text-on-surface">Asistencia global 24/7 con respuesta garantizada en menos de 15 minutos.</p>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-background px-6 py-4 rounded-sm border border-tertiary/10">
+<div class="text-right">
+<p class="font-label-mono text-[10px] text-tertiary uppercase">Latency Threshold</p>
+<p class="font-headline-md text-headline-md text-primary leading-none">12ms</p>
+</div>
+<div class="w-px h-10 bg-tertiary/20"></div>
+<button class="bg-secondary text-on-secondary px-6 py-2 font-label-caps text-label-caps font-bold hover:scale-105 transition-all">CONECTAR</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Dynamic Data Section -->
+<section class="py-24 bg-surface-container-lowest relative">
+<div class="absolute inset-0 scanline opacity-10"></div>
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+<div>
+<span class="font-label-mono text-label-mono text-secondary mb-4 block">// PROTOCOLO_EJECUCIÓN</span>
+<h2 class="font-display-lg text-display-lg-mobile text-on-surface mb-8">TELEMETRÍA EN TIEMPO REAL</h2>
+<div class="space-y-12">
+<div class="flex gap-6 items-start">
+<div class="bg-primary/10 p-3 border border-primary/20 text-primary">01</div>
+<div>
+<h4 class="font-headline-md text-[20px] text-on-surface mb-2">Ingeniería Cinética</h4>
+<p class="text-on-surface-variant font-body-md">Cada línea de código es pesada y probada para eliminar el "drag" digital en sus aplicaciones principales.</p>
+</div>
+</div>
+<div class="flex gap-6 items-start">
+<div class="bg-secondary/10 p-3 border border-secondary/20 text-secondary">02</div>
+<div>
+<h4 class="font-headline-md text-[20px] text-on-surface mb-2">Arquitectura Distribuida</h4>
+<p class="text-on-surface-variant font-body-md">Escalabilidad horizontal sin degradación de latencia, diseñada para soportar picos de carga extremos.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative aspect-square bg-background border border-tertiary/10 p-12 overflow-hidden group">
+<div class="absolute inset-0 opacity-20 pointer-events-none">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-[2000ms]" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCD0heU8MsGPkdrfPApWgZjCUtEjoR1YeO3MerfCVVwVSjS7i8T7mf4HtXMs_8YRKs8rbl-qCO_XDux2JU3_WRtr_MC4WKNYoC2FUiZ4QGPN-xbLDf1dmUIkWHLZbexGaAn3ecZLWfMIdm-xs2g3K-GOMtudFZOi_cjR5KLc0_BjP70PoFp9omo86ZZAmUCRNKZ_GPQTWTFs8ze6hU8bIH3wXgdrX6A8eKL0ArXcfP75EV5J_EI8MZNUaK09btThgdZrljO4HQvH1w')"></div>
+</div>
+<div class="relative h-full flex flex-col justify-end">
+<div class="flex items-end justify-between border-b border-primary pb-4 mb-4">
+<span class="font-label-mono text-display-lg-mobile text-primary">99.9%</span>
+<span class="font-label-caps text-label-caps text-tertiary">UPTIME GUARANTEE</span>
+</div>
+<p class="font-label-mono text-label-mono text-on-surface-variant opacity-70">
+                            Monitoreo proactivo con inteligencia artificial predictiva. Detectamos fallas antes de que ocurran.
+                        </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 bg-surface-container-lowest border-t border-tertiary/20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-2 mb-6">
+<img alt="APEX Logo" class="h-6 w-6" src="https://lh3.googleusercontent.com/aida/AP1WRLvkVH_ZUiqeOs96Pc8lkGVkpBB4tevLbN4EdWmYCAoiPAE_asgMMrhwO5Ox83VZhfZ5PcXnDdhAk-W2nR4ecu25Zvq8jDi8Y1iDJjYcbDUpEGE4gFlDzgfst6R7FTY6-cE5-hR0Jz22mV9bwYE8vCOM2tepqRxZOELGjMnTXK6rMRHWzHw3uE00zVSooDhoh0PUya8QzcG94DSkdi8BAafMY7YXkhkzL-siLPr8tzRqrm7KRYx1DjfOmtU"/>
+<div class="font-label-caps text-label-caps text-primary">APEX SYSTEMS</div>
+</div>
+<p class="font-label-mono text-[12px] text-on-surface-variant leading-relaxed">
+                PRECISIÓN EN CADA CICLO DE RELOJ.<br/>
+                OPERATING FROM HUB_01_MADRID
+            </p>
+</div>
+<div class="space-y-4">
+<h5 class="font-label-caps text-label-caps text-tertiary mb-6">EXPLORE</h5>
+<nav class="flex flex-col gap-2">
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-tertiary hover:underline" href="#">Architecture</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-tertiary hover:underline" href="#">Privacy</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-tertiary hover:underline" href="#">Service Level Agreement</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-tertiary hover:underline" href="#">Network Status</a>
+</nav>
+</div>
+<div class="space-y-4">
+<h5 class="font-label-caps text-label-caps text-tertiary mb-6">OPERATIONS</h5>
+<div class="font-label-mono text-label-mono text-on-surface-variant space-y-2">
+<p>Status: <span class="text-secondary">OPTIMAL</span></p>
+<p>Region: EU-WEST-1</p>
+<p>Load: 42.8%</p>
+</div>
+</div>
+<div class="space-y-4">
+<h5 class="font-label-caps text-label-caps text-tertiary mb-6">NEWSLETTER</h5>
+<div class="relative">
+<input class="w-full bg-background border-b-2 border-tertiary/30 focus:border-secondary transition-all outline-none py-2 px-0 font-label-mono text-label-mono text-on-surface placeholder:text-tertiary/30" placeholder="OPERATOR@MAIL.COM" type="email"/>
+<button class="absolute right-0 top-0 text-secondary hover:translate-x-1 transition-transform">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="col-span-full mt-12 pt-8 border-t border-tertiary/10 flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="font-label-mono text-[10px] text-tertiary/50">
+                ©2024 APEX SYSTEMS. ALL RIGHTS RESERVED. LATENCY: 12ms.
+            </div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-tertiary/40 cursor-pointer hover:text-primary transition-colors">terminal</span>
+<span class="material-symbols-outlined text-tertiary/40 cursor-pointer hover:text-primary transition-colors">monitoring</span>
+<span class="material-symbols-outlined text-tertiary/40 cursor-pointer hover:text-primary transition-colors">hub</span>
+</div>
+</div>
+</div>
+</footer>
+<script>
+    // Micro-interaction for technical terminal vibe
+    document.querySelectorAll('button').forEach(button => {
+        button.addEventListener('mouseenter', () => {
+            // Interaction feedback
+        });
+    });
+
+    // Simple typing effect for a placeholder console
+    const consoleLines = [
+        "> initializing neural_net_engine... [OK]",
+        "> latency check: 0.12ms",
+        "> active sprint status: ON_TRACK",
+        "> security logs: CLEAN",
+        "> system_health: 100%"
+    ];
+</script>
+</body></html>

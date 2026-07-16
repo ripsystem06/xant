@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;family=JetBrains+Mono:wght@400;700&amp;family=Geist:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#b3c5ff",
+                        "tertiary": "#b9c8de",
+                        "on-tertiary-container": "#1c2b3c",
+                        "secondary-container": "#00d2fd",
+                        "secondary-fixed-dim": "#3cd7ff",
+                        "inverse-primary": "#0054d6",
+                        "on-surface": "#dae2fd",
+                        "primary": "#b3c5ff",
+                        "on-tertiary-fixed-variant": "#39485a",
+                        "on-tertiary": "#233143",
+                        "surface-bright": "#31394d",
+                        "on-primary-container": "#001849",
+                        "on-secondary-fixed": "#001f27",
+                        "surface-tint": "#b3c5ff",
+                        "on-background": "#dae2fd",
+                        "tertiary-container": "#8392a6",
+                        "surface-container-highest": "#2d3449",
+                        "surface-container-lowest": "#060e20",
+                        "tertiary-fixed": "#d4e4fa",
+                        "error": "#ffb4ab",
+                        "outline": "#8c90a1",
+                        "secondary": "#a2e7ff",
+                        "secondary-fixed": "#b4ebff",
+                        "primary-container": "#0066ff",
+                        "on-tertiary-fixed": "#0d1c2d",
+                        "inverse-on-surface": "#283044",
+                        "error-container": "#93000a",
+                        "on-primary-fixed": "#001849",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary": "#003642",
+                        "surface-container": "#171f33",
+                        "primary-fixed": "#dae1ff",
+                        "surface-variant": "#2d3449",
+                        "background": "#0b1326",
+                        "on-surface-variant": "#c2c6d8",
+                        "surface-container-high": "#222a3d",
+                        "surface": "#0b1326",
+                        "inverse-surface": "#dae2fd",
+                        "on-secondary-container": "#005669",
+                        "on-primary": "#002b75",
+                        "surface-container-low": "#131b2e",
+                        "surface-dim": "#0b1326",
+                        "outline-variant": "#424656",
+                        "on-error": "#690005",
+                        "on-primary-fixed-variant": "#003fa4",
+                        "on-secondary-fixed-variant": "#004e5f",
+                        "tertiary-fixed-dim": "#b9c8de"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "container-max": "1440px",
+                        "unit": "4px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Space Grotesk"],
+                        "label-mono": ["JetBrains Mono"],
+                        "body-lg": ["Geist"],
+                        "body-md": ["Geist"],
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-md": ["Space Grotesk"],
+                        "display-lg": ["Space Grotesk"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-mono": ["14px", { "lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "700" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "display-lg": ["72px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .scanline {
+            width: 100%;
+            height: 100px;
+            z-index: 10;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(162, 231, 255, 0.05) 50%, rgba(0, 0, 0, 0) 100%);
+            opacity: 0.1;
+            position: absolute;
+            bottom: 100%;
+            animation: scanline 8s linear infinite;
+        }
+        @keyframes scanline {
+            0% { bottom: 100%; }
+            100% { bottom: -100%; }
+        }
+        .technical-grid {
+            background-image: radial-gradient(rgba(179, 197, 255, 0.1) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+        .glitch-hover:hover {
+            animation: glitch 0.2s steps(2) infinite;
+        }
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            50% { transform: translate(-1px, 1px); filter: contrast(1.2); }
+            100% { transform: translate(1px, -1px); }
+        }
+        .corner-accent {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 4px;
+            height: 4px;
+            background: #b3c5ff;
+        }
+        .mask-fade {
+            mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden technical-grid min-h-screen selection:bg-primary selection:text-on-primary-container">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-tertiary/20">
+<nav class="flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto h-20">
+<div class="flex items-center gap-3">
+<img alt="APEX_CONSULT Logo" class="w-10 h-10 object-contain text-primary" src="https://lh3.googleusercontent.com/aida/AP1WRLvkVH_ZUiqeOs96Pc8lkGVkpBB4tevLbN4EdWmYCAoiPAE_asgMMrhwO5Ox83VZhfZ5PcXnDdhAk-W2nR4ecu25Zvq8jDi8Y1iDJjYcbDUpEGE4gFlDzgfst6R7FTY6-cE5-hR0Jz22mV9bwYE8vCOM2tepqRxZOELGjMnTXK6rMRHWzHw3uE00zVSooDhoh0PUya8QzcG94DSkdi8BAafMY7YXkhkzL-siLPr8tzRqrm7KRYx1DjfOmtU"/>
+<div class="font-display-lg-mobile text-[24px] tracking-tighter text-primary font-bold">APEX_CONSULT</div>
+</div>
+<div class="hidden md:flex gap-8 items-center font-label-caps text-label-caps">
+<a class="text-primary border-b border-primary pb-1" href="#">Services</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Portfolio</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Telemetry</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Support</a>
+</div>
+<button class="bg-primary text-on-primary-container font-label-caps text-label-caps px-6 py-3 tracking-widest glitch-hover active:skew-x-[-12deg] transition-transform font-bold">
+            LAUNCH TERMINAL
+        </button>
+</nav>
+</header>
+<!-- SideNavBar (Operator Shell) -->
+<aside class="hidden lg:flex fixed left-0 h-full w-64 bg-surface-container-lowest border-r border-tertiary/10 flex-col py-8 z-40 mt-20">
+<div class="px-6 mb-8">
+<h2 class="font-label-mono text-secondary font-bold">OPERATOR_01</h2>
+<p class="font-label-mono text-[10px] text-on-surface-variant opacity-60">v4.2.0-STABLE</p>
+</div>
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 bg-secondary/10 text-secondary border-l-2 border-secondary px-4 py-3 font-label-mono text-label-mono translate-x-1 duration-75" href="#">
+<span class="material-symbols-outlined text-[18px]">dashboard</span> Dashboard
+        </a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high px-4 py-3 font-label-mono text-label-mono transition-all" href="#">
+<span class="material-symbols-outlined text-[18px]">speed</span> Active Sprints
+        </a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high px-4 py-3 font-label-mono text-label-mono transition-all" href="#">
+<span class="material-symbols-outlined text-[18px]">settings_input_component</span> System Health
+        </a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high px-4 py-3 font-label-mono text-label-mono transition-all" href="#">
+<span class="material-symbols-outlined text-[18px]">terminal</span> Security Logs
+        </a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high px-4 py-3 font-label-mono text-label-mono transition-all" href="#">
+<span class="material-symbols-outlined text-[18px]">settings</span> Settings
+        </a>
+</div>
+<div class="mt-auto px-6 font-label-mono text-[10px] text-tertiary/40">
+        LOC_ID: PX-02<br/>STATUS: ENCRYPTED
+    </div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="lg:ml-64 pt-32 px-margin-mobile md:px-margin-desktop pb-24 max-w-container-max">
+<div class="scanline"></div>
+<!-- Hero Header -->
+<header class="mb-16">
+<div class="flex items-center gap-4 mb-4">
+<span class="w-12 h-[1px] bg-primary"></span>
+<span class="font-label-mono text-primary tracking-widest text-[12px]">PROJECT_REGISTRY_INIT</span>
+</div>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-6 leading-none">Engineering<br/><span class="text-secondary italic">Velocity</span> At Scale.</h1>
+<p class="max-w-2xl font-body-lg text-on-surface-variant">Architecture engineered for extreme performance. Below lies a registry of high-frequency deployments, each benchmarked against the APEX standard for stability, latency, and throughput.</p>
+</header>
+<!-- Bento Portfolio Grid -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Project Card 1: Large Featured -->
+<div class="md:col-span-8 bg-surface-container-lowest border border-tertiary/10 p-8 relative overflow-hidden group">
+<div class="corner-accent"></div>
+<div class="flex flex-col md:flex-row justify-between items-start gap-8">
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-4">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-mono text-secondary text-[12px]">LIVE_SYSTEM</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2">QUASAR_X ENGINE</h3>
+<p class="text-on-surface-variant mb-6 font-body-md">A distributed trading engine processing 4.2M events/sec with sub-millisecond tail latency. Built on Rust/Tokio architecture with custom memory allocators.</p>
+<!-- Performance Metric -->
+<div class="grid grid-cols-2 gap-4 mb-8">
+<div class="bg-surface-container-high p-4 border border-tertiary/5">
+<span class="block font-label-mono text-[10px] text-tertiary uppercase mb-1">P99 Latency</span>
+<span class="block font-display-lg-mobile text-[24px] text-primary">0.08ms</span>
+</div>
+<div class="bg-surface-container-high p-4 border border-tertiary/5">
+<span class="block font-label-mono text-[10px] text-tertiary uppercase mb-1">Uptime Score</span>
+<span class="block font-display-lg-mobile text-[24px] text-secondary">99.999%</span>
+</div>
+</div>
+<div class="flex gap-4">
+<button class="bg-primary text-on-primary-container px-6 py-2 font-label-caps text-label-caps font-bold transition-all hover:bg-primary-fixed-dim">VIEW_TELEMETRY</button>
+<button class="border border-tertiary/20 text-on-surface px-6 py-2 font-label-caps text-label-caps hover:bg-white/5 transition-all">GIT_CORE</button>
+</div>
+</div>
+<div class="w-full md:w-64 h-64 bg-surface-container relative rounded-lg border border-tertiary/10 overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent"></div>
+<img class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700" data-alt="A macro-photography shot of a high-end motherboard featuring glowing blue and cyan copper traces, looking like a digital city at night. The lighting is dark and moody with sharp neon accents, mirroring the Apex Consult branding. High-frequency electrical pulses are visualized as soft streaks of light moving through the circuits." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdPbyyU2WMeHid2SiQNHvRth1FUvcdmzYYcua8N8Z1Fy1r4mZDPtnSwZLl3VOE5yAo17CohU4NDvfRuviAqXE51v2L53IAWmnbPQZDdi2q3fd_1rSxojQP9xrRM5uE7kjaZEE1sageXKmvs_kqqXzyMrjtQK0BkFSnSKj0xP2DjOckOiH2uJ-HY37VEKMoPPJK5TcSsSGB_oxpMdqh_bFvxVtxFB3I_9VUeP4IitQMmQF3RI-1z6BRJ56zx7wUuY8kO351zDYSEzo"/>
+</div>
+</div>
+</div>
+<!-- Project Card 2: Security Focus -->
+<div class="md:col-span-4 bg-surface-container-lowest border border-tertiary/10 p-8 relative flex flex-col group">
+<div class="corner-accent"></div>
+<div class="mb-auto">
+<div class="flex items-center gap-2 mb-4">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-mono text-secondary text-[12px]">STRESS_TESTED</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2">IRON_GATE 2.0</h3>
+<p class="text-on-surface-variant font-body-md text-sm">Military-grade biometric authentication suite with zero-knowledge proof verification protocols.</p>
+</div>
+<div class="my-8 py-4 border-y border-tertiary/10">
+<div class="flex justify-between items-center mb-2">
+<span class="font-label-mono text-[10px] text-tertiary uppercase">Security Score</span>
+<span class="font-label-mono text-primary">A+ [V8]</span>
+</div>
+<div class="h-2 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[98%] shadow-[0_0_15px_rgba(179,197,255,0.3)]"></div>
+</div>
+</div>
+<div class="h-32 bg-surface-container rounded-lg border border-tertiary/10 overflow-hidden">
+<div class="p-4 font-label-mono text-[11px] text-secondary opacity-60 leading-relaxed overflow-hidden mask-fade">
+                    0x7B2F: CALL verify_signature<br/>
+                    0x7B34: PUSH 0x1A22<br/>
+                    0x7B38: JMP_IF_VALID 0x7B50<br/>
+                    0x7B40: LOG_ERROR "ERR_SIG_MISMATCH"<br/>
+                    0x7B48: HALT
+                </div>
+</div>
+</div>
+<!-- Project Card 3: Cloud Infrastructure -->
+<div class="md:col-span-6 bg-surface-container-lowest border border-tertiary/10 p-8 relative group">
+<div class="corner-accent"></div>
+<div class="flex gap-6">
+<div class="w-24 h-24 shrink-0 rounded border border-tertiary/10 bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Abstract visualization of a cloud server network using glowing thin lines and floating data cubes. The color palette is strictly deep blue, dark navy, and sharp cyan highlights. The composition is structured and architectural, conveying massive scalability and robust digital infrastructure in a dark, high-tech setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGxiU7yW2dMwhQ_D35qy1w0UINVauz0l0KmNw7eXlJCp_w21QDw8P6zenO5_9g9CCTjLBCD64As7dvaflbpnWhUCDfol5YQpcUDuDI-8rlhACun5XR5xjxv05zEFQaxI3fk632fotq26pL24zAlNs3F2eeph0PNC_ZBQ_RvRuej0wo_DlTS0A8dm1GmREyD2nfo080oFV_T5rf98e3-T0hdq9tuSea4Xj29tGDDp84cwWpkAAKwMOtDDoGvmFOKegieYMgwjGLg5E"/>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md mb-1">ORION CLUSTER</h3>
+<p class="text-on-surface-variant text-sm mb-4">Autoscaling Kubernetes mesh supporting multi-region disaster recovery for global SaaS platforms.</p>
+<div class="flex gap-2">
+<span class="bg-secondary/10 border border-secondary/30 px-2 py-1 text-[10px] font-label-mono text-secondary">#DEVOPS</span>
+<span class="bg-secondary/10 border border-secondary/30 px-2 py-1 text-[10px] font-label-mono text-secondary">#TERRAFORM</span>
+<span class="bg-secondary/10 border border-secondary/30 px-2 py-1 text-[10px] font-label-mono text-secondary">#AWS</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Project Card 4: AI/Telemetry -->
+<div class="md:col-span-6 bg-surface-container-lowest border border-tertiary/10 p-8 relative overflow-hidden group">
+<div class="corner-accent"></div>
+<div class="flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex-1">
+<h3 class="font-headline-md text-headline-md mb-2">SENTINEL AI</h3>
+<p class="text-on-surface-variant text-sm mb-4">Predictive anomaly detection for industrial IoT. Analyzing 50k sensor inputs per second.</p>
+<div class="font-label-mono text-[12px] text-secondary flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px]">query_stats</span> 94% PREDICTION_ACCURACY
+                    </div>
+</div>
+<div class="w-full md:w-48 h-24 flex items-center justify-center">
+<!-- Tiny SVG-like CSS graph -->
+<div class="w-full h-full flex items-end gap-1">
+<div class="bg-secondary/30 w-full h-[40%] transition-all group-hover:h-[60%]"></div>
+<div class="bg-secondary/40 w-full h-[30%] transition-all group-hover:h-[80%]"></div>
+<div class="bg-secondary/50 w-full h-[70%] transition-all group-hover:h-[50%]"></div>
+<div class="bg-secondary/60 w-full h-[90%] transition-all group-hover:h-[100%]"></div>
+<div class="bg-primary/70 w-full h-[55%] transition-all group-hover:h-[75%] shadow-[0_0_10px_rgba(179,197,255,0.5)]"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Stats Section -->
+<section class="mt-24 grid grid-cols-2 md:grid-cols-4 gap-gutter border-y border-tertiary/10 py-12">
+<div>
+<span class="block font-label-mono text-tertiary text-[12px] mb-2">SYSTEMS_DEPLOYED</span>
+<span class="block font-display-lg text-[48px] text-on-surface">142</span>
+</div>
+<div>
+<span class="block font-label-mono text-tertiary text-[12px] mb-2">TOTAL_UPTIME_HRS</span>
+<span class="block font-display-lg text-[48px] text-on-surface">8.4k</span>
+</div>
+<div>
+<span class="block font-label-mono text-tertiary text-[12px] mb-2">LINES_OF_RUST</span>
+<span class="block font-display-lg text-[48px] text-on-surface">1.2M</span>
+</div>
+<div>
+<span class="block font-label-mono text-tertiary text-[12px] mb-2">CRITICAL_VULNS_FIXED</span>
+<span class="block font-display-lg text-[48px] text-primary">0</span>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 bg-surface-container-lowest border-t border-tertiary/20 mt-12">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-2">
+<div class="flex items-center gap-3 mb-4">
+<img alt="APEX_CONSULT Logo" class="w-6 h-6 object-contain" src="https://lh3.googleusercontent.com/aida/AP1WRLvkVH_ZUiqeOs96Pc8lkGVkpBB4tevLbN4EdWmYCAoiPAE_asgMMrhwO5Ox83VZhfZ5PcXnDdhAk-W2nR4ecu25Zvq8jDi8Y1iDJjYcbDUpEGE4gFlDzgfst6R7FTY6-cE5-hR0Jz22mV9bwYE8vCOM2tepqRxZOELGjMnTXK6rMRHWzHw3uE00zVSooDhoh0PUya8QzcG94DSkdi8BAafMY7YXkhkzL-siLPr8tzRqrm7KRYx1DjfOmtU"/>
+<div class="font-label-caps text-label-caps text-primary font-bold tracking-widest">APEX_CONSULT</div>
+</div>
+<p class="text-on-surface-variant font-body-md text-sm max-w-xs">Elite software development for sectors where performance is non-negotiable. High frequency, high security, high availability.</p>
+</div>
+<div class="flex flex-col gap-3 font-label-mono text-label-mono">
+<span class="text-tertiary uppercase text-[10px] mb-2 tracking-widest">Infrastructure</span>
+<a class="text-on-surface-variant hover:text-tertiary hover:underline" href="#">Architecture</a>
+<a class="text-on-surface-variant hover:text-tertiary hover:underline" href="#">Network Status</a>
+<a class="text-on-surface-variant hover:text-tertiary hover:underline" href="#">Latency Reports</a>
+</div>
+<div class="flex flex-col gap-3 font-label-mono text-label-mono">
+<span class="text-tertiary uppercase text-[10px] mb-2 tracking-widest">Legal</span>
+<a class="text-on-surface-variant hover:text-tertiary hover:underline" href="#">Privacy</a>
+<a class="text-on-surface-variant hover:text-tertiary hover:underline" href="#">Service Level Agreement</a>
+<a class="text-on-surface-variant hover:text-tertiary hover:underline" href="#">End User Policy</a>
+</div>
+</div>
+<div class="px-margin-desktop max-w-container-max mx-auto mt-12 pt-8 border-t border-tertiary/5 flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="font-label-mono text-label-mono text-on-surface-variant opacity-50">
+            ©2024 APEX SYSTEMS. ALL RIGHTS RESERVED. LATENCY: 12ms.
+        </div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary text-[20px]">terminal</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">database</span>
+<span class="material-symbols-outlined text-tertiary text-[20px]">shield</span>
+</div>
+</div>
+</footer>
+<!-- Interactive script for terminal effect (micro-interaction) -->
+<script>
+    document.querySelectorAll('a, button').forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            const sounds = [200, 220, 240];
+            const context = new (window.AudioContext || window.webkitAudioContext)();
+            const oscillator = context.createOscillator();
+            const gainNode = context.createGain();
+            oscillator.type = 'square';
+            oscillator.frequency.setValueAtTime(sounds[Math.floor(Math.random() * sounds.length)], context.currentTime);
+            gainNode.gain.setValueAtTime(0.01, context.currentTime);
+            oscillator.connect(gainNode);
+            gainNode.connect(context.destination);
+            oscillator.start();
+            oscillator.stop(context.currentTime + 0.02);
+        });
+    });
+</script>
+</body></html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>APEX_CONSULT | Technical Services Datasheet</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Geist:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed-dim": "#b3c5ff",
+                    "tertiary": "#b9c8de",
+                    "on-tertiary-container": "#1c2b3c",
+                    "secondary-container": "#00d2fd",
+                    "secondary-fixed-dim": "#3cd7ff",
+                    "inverse-primary": "#0054d6",
+                    "on-surface": "#e5e2e3",
+                    "primary": "#b3c5ff",
+                    "on-tertiary-fixed-variant": "#39485a",
+                    "on-tertiary": "#233143",
+                    "surface-bright": "#3a393a",
+                    "on-primary-container": "#f8f7ff",
+                    "on-secondary-fixed": "#001f27",
+                    "surface-tint": "#b3c5ff",
+                    "on-background": "#e5e2e3",
+                    "tertiary-container": "#8392a6",
+                    "surface-container-highest": "#353436",
+                    "surface-container-lowest": "#0e0e0f",
+                    "tertiary-fixed": "#d4e4fa",
+                    "error": "#ffb4ab",
+                    "outline": "#8c90a1",
+                    "secondary": "#a2e7ff",
+                    "secondary-fixed": "#b4ebff",
+                    "primary-container": "#0066ff",
+                    "on-tertiary-fixed": "#0d1c2d",
+                    "inverse-on-surface": "#313031",
+                    "error-container": "#93000a",
+                    "on-primary-fixed": "#001849",
+                    "on-error-container": "#ffdad6",
+                    "on-secondary": "#003642",
+                    "surface-container": "#201f20",
+                    "primary-fixed": "#dae1ff",
+                    "surface-variant": "#353436",
+                    "background": "#131314",
+                    "on-surface-variant": "#c2c6d8",
+                    "surface-container-high": "#2a2a2b",
+                    "surface": "#131314",
+                    "inverse-surface": "#e5e2e3",
+                    "on-secondary-container": "#005669",
+                    "on-primary": "#002b75",
+                    "surface-container-low": "#1c1b1c",
+                    "surface-dim": "#131314",
+                    "outline-variant": "#424656",
+                    "on-error": "#690005",
+                    "on-primary-fixed-variant": "#003fa4",
+                    "on-secondary-fixed-variant": "#004e5f",
+                    "tertiary-fixed-dim": "#b9c8de"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "gutter": "24px",
+                    "margin-desktop": "48px",
+                    "container-max": "1440px",
+                    "unit": "4px"
+            },
+            "fontFamily": {
+                    "display-lg-mobile": ["Hanken Grotesk"],
+                    "label-mono": ["JetBrains Mono"],
+                    "body-lg": ["Geist"],
+                    "body-md": ["Geist"],
+                    "label-caps": ["JetBrains Mono"],
+                    "headline-md": ["Hanken Grotesk"],
+                    "display-lg": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "display-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "label-mono": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "700"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #131314;
+            background-image: 
+                linear-gradient(rgba(179, 197, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(179, 197, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            color: #e5e2e3;
+        }
+        .scan-line {
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(0deg, transparent 0%, rgba(179, 197, 255, 0.05) 50%, transparent 100%);
+            position: fixed;
+            top: -100px;
+            left: 0;
+            z-index: 100;
+            pointer-events: none;
+            animation: scan 8s linear infinite;
+        }
+        @keyframes scan {
+            0% { top: -100px; }
+            100% { top: 100vh; }
+        }
+        .technical-border {
+            position: relative;
+        }
+        .technical-border::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 4px;
+            height: 4px;
+            background-color: #b3c5ff;
+        }
+        .terminal-text {
+            font-family: 'JetBrains Mono', monospace;
+            text-shadow: 0 0 10px rgba(0, 210, 253, 0.3);
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md overflow-x-hidden">
+<div class="scan-line"></div>
+<!-- Navigation -->
+<header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-tertiary/20">
+<div class="flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-3">
+<img alt="APEX_CONSULT logo" class="w-10 h-10 object-contain text-primary" src="https://lh3.googleusercontent.com/aida/AP1WRLvkVH_ZUiqeOs96Pc8lkGVkpBB4tevLbN4EdWmYCAoiPAE_asgMMrhwO5Ox83VZhfZ5PcXnDdhAk-W2nR4ecu25Zvq8jDi8Y1iDJjYcbDUpEGE4gFlDzgfst6R7FTY6-cE5-hR0Jz22mV9bwYE8vCOM2tepqRxZOELGjMnTXK6rMRHWzHw3uE00zVSooDhoh0PUya8QzcG94DSkdi8BAafMY7YXkhkzL-siLPr8tzRqrm7KRYx1DjfOmtU"/>
+<div class="font-display-lg-mobile text-display-lg-mobile tracking-tighter text-primary">APEX_CONSULT</div>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-label-caps text-label-caps text-primary border-b border-primary pb-1" href="#">Services</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">Portfolio</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">Telemetry</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">Support</a>
+<button class="ml-4 bg-primary text-on-primary-container px-6 py-2 font-label-caps text-label-caps hover:skew-x-[-12deg] transition-all duration-150">
+                    LAUNCH TERMINAL
+                </button>
+</nav>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main class="pt-32 pb-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Hero Section / Datasheet Header -->
+<section class="mb-16 border-l-4 border-primary pl-8 py-4">
+<div class="font-label-mono text-label-mono text-secondary mb-2 tracking-[0.2em] uppercase">SYSTEM_MANIFEST: v4.2.0</div>
+<h1 class="font-display-lg text-display-lg text-on-surface mb-4 leading-none uppercase max-w-3xl">
+                Engineering <span class="text-primary">Performance</span> for High-Frequency Systems.
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-8">
+                Technical support and bespoke software architecture tailored for low-latency execution and absolute structural integrity. All systems active.
+            </p>
+<div class="flex flex-wrap gap-4">
+<div class="bg-tertiary/10 border border-tertiary/30 px-4 py-1 font-label-mono text-[10px] flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                    LATENCY: 0.12ms
+                </div>
+<div class="bg-tertiary/10 border border-tertiary/30 px-4 py-1 font-label-mono text-[10px] flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+                    UPTIME: 99.999%
+                </div>
+<div class="bg-tertiary/10 border border-tertiary/30 px-4 py-1 font-label-mono text-[10px] flex items-center gap-2 text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+                    NODE: TOKYO-A1
+                </div>
+</div>
+</section>
+<!-- Services Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Service Module 01: Full Width Highlight -->
+<div class="md:col-span-8 group relative overflow-hidden bg-surface-container border border-tertiary/10 technical-border p-8 hover:border-primary/50 transition-all duration-300">
+<div class="absolute top-0 right-0 p-4 font-label-mono text-[10px] text-tertiary opacity-30">MOD_ID: ARCH_SYS_01</div>
+<div class="flex flex-col md:flex-row gap-8 h-full">
+<div class="flex-1">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary scale-125">settings_input_component</span>
+<h2 class="font-headline-md text-headline-md text-on-surface uppercase">Full-Stack Architecture</h2>
+</div>
+<p class="text-on-surface-variant mb-8 font-body-md leading-relaxed">
+                            Engineered for vertical scalability and absolute throughput. We deploy micro-kernel architectures that prioritize modularity without sacrificing the raw performance required for modern financial telemetry.
+                        </p>
+<ul class="space-y-3 font-label-mono text-label-mono text-secondary mb-8">
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary"></span> Distributed State Management</li>
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary"></span> Low-Level Optimization (Rust/C++)</li>
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary"></span> Real-time WebSocket Pipelines</li>
+</ul>
+<button class="bg-primary text-on-primary-container px-8 py-3 font-label-caps text-label-caps tracking-widest hover:bg-white hover:text-black transition-colors">
+                            INITIATE DEPLOYMENT
+                        </button>
+</div>
+<div class="w-full md:w-1/3 aspect-square bg-surface-container-highest flex items-center justify-center border border-tertiary/5 relative overflow-hidden">
+<img alt="A close-up shot of a high-tech server rack with glowing electric blue fiber optic cables and brushed aluminum panels. The lighting is dark and cinematic with neon blue highlights." class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-luminosity hover:opacity-100 transition-opacity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPIgSrCx5WTETdY84lC9FHKC2rbtMwMvjDyDTw-l5r7srUBufSp_aauuGryC071S-MRMOtsVk1t7wc45G5i7QDEeDO2P1aCC8SjvenV_kK_s7R2iPBaB4gX4FDKTlhjgry-PRDIDqzdbFtruoeldIlBP-1X_KrvDyUlERvkZCzyx-Q7KKTxHoFciq0Ua3uOFXPlYckPU2zMEDkk0QvCOBiHDsvyhJfgloNPJ0kCi_oXC4ffB2X0z9pLVD7AqyAKPYl6yry7mc6mKE"/>
+<div class="z-10 text-center p-4">
+<div class="font-label-mono text-primary animate-pulse">SYS_ACTIVE</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Service Module 02: Vertical Card -->
+<div class="md:col-span-4 bg-surface-container-low border border-tertiary/10 technical-border p-8 hover:bg-surface-container-high transition-all">
+<div class="font-label-mono text-label-mono text-tertiary mb-12 opacity-50">002 / TELEMETRY</div>
+<span class="material-symbols-outlined text-secondary text-5xl mb-6" style="font-variation-settings: 'FILL' 1;">speed</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4 uppercase">Data Diagnostics</h3>
+<p class="text-on-surface-variant font-body-md mb-12">
+                    Advanced monitoring suites that provide sub-millisecond visibility into every layer of your application stack. Identify bottlenecks before they impact trade execution.
+                </p>
+<div class="mt-auto">
+<button class="w-full border border-secondary text-secondary px-6 py-3 font-label-caps text-label-caps hover:bg-secondary hover:text-on-secondary-fixed transition-all">
+                        REQUEST TELEMETRY
+                    </button>
+</div>
+</div>
+<!-- Service Module 03: Small Utility Card -->
+<div class="md:col-span-4 bg-surface-container border border-tertiary/10 technical-border p-8 hover:border-primary/50 transition-all">
+<div class="font-label-mono text-primary mb-6">/ SECURE_SHELL</div>
+<h3 class="font-label-caps text-label-caps text-on-surface text-xl mb-4">Hardened Infrastructure</h3>
+<p class="text-on-surface-variant font-body-md mb-6 text-sm">
+                    Air-gapped deployment protocols and end-to-end encryption for mission-critical operations.
+                </p>
+<div class="h-24 w-full bg-background border border-tertiary/10 flex flex-col justify-end p-2">
+<div class="w-full bg-primary/20 h-1 mb-1"></div>
+<div class="w-3/4 bg-primary/20 h-1 mb-1"></div>
+<div class="w-1/2 bg-primary/20 h-1 mb-4"></div>
+<div class="font-label-mono text-[8px] text-primary">ENCRYPTION_LAYER_01_ACTIVE</div>
+</div>
+</div>
+<!-- Service Module 04: Medium Info Card -->
+<div class="md:col-span-8 bg-surface-container border border-tertiary/10 technical-border p-8 group">
+<div class="flex justify-between items-start mb-8">
+<div>
+<div class="font-label-mono text-secondary mb-2">004 / OPTIMIZATION</div>
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase">Legacy Overhaul</h3>
+</div>
+<span class="material-symbols-outlined text-tertiary group-hover:rotate-180 transition-transform duration-500">settings_backup_restore</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<p class="text-on-surface-variant font-body-md">
+                        Transform monolithic legacy systems into high-velocity microservices. We specialize in the "hot-swap" migration of critical fintech systems with zero downtime requirements.
+                    </p>
+<div class="bg-surface-container-highest p-4 border border-tertiary/10">
+<div class="font-label-mono text-[10px] text-secondary mb-4">MIGRATION_STATUS</div>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between font-label-mono text-[9px] mb-1">
+<span>DATABASE_CONVERSION</span>
+<span>88%</span>
+</div>
+<div class="w-full bg-background h-1.5 overflow-hidden">
+<div class="bg-secondary-container h-full w-[88%]"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between font-label-mono text-[9px] mb-1">
+<span>API_REFACTORING</span>
+<span>64%</span>
+</div>
+<div class="w-full bg-background h-1.5 overflow-hidden">
+<div class="bg-primary h-full w-[64%]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Call to Action / Technical Footer Detail -->
+<section class="mt-24 border-t border-tertiary/20 pt-16 text-center">
+<h4 class="font-label-caps text-label-caps text-tertiary mb-6 tracking-[0.4em]">CONNECT_TO_CORE_PROCESS</h4>
+<div class="flex flex-col md:flex-row justify-center gap-4">
+<button class="bg-primary text-on-primary-container px-12 py-5 font-display-lg-mobile text-xl hover:skew-x-[-4deg] transition-all">
+                    START_CONSULTATION
+                </button>
+<button class="border border-tertiary text-on-surface px-12 py-5 font-display-lg-mobile text-xl hover:bg-tertiary/10 transition-all">
+                    VIEW_SOURCE_CODE
+                </button>
+</div>
+<div class="mt-12 font-label-mono text-label-mono text-on-surface-variant/40 flex justify-center gap-12 flex-wrap">
+<span>ESTABLISHED: 2014</span>
+<span>GITHUB: @APEX_SYS</span>
+<span>LICENSE: MIT_PRO_ENTERPRISE</span>
+</div>
+</section>
+</main>
+<!-- Side Bar Indicator -->
+<aside class="hidden lg:flex fixed left-0 top-1/2 -translate-y-1/2 flex-col gap-8 px-4 py-8 border-r border-tertiary/10 h-1/2 justify-center">
+<div class="font-label-mono text-[10px] vertical-text tracking-widest text-primary rotate-180" style="writing-mode: vertical-rl;">OPERATING_CAPACITY: 100%</div>
+<div class="w-1 h-32 bg-surface-container-highest relative">
+<div class="absolute bottom-0 w-full bg-primary h-2/3"></div>
+</div>
+<div class="font-label-mono text-[10px] vertical-text tracking-widest text-on-surface-variant rotate-180" style="writing-mode: vertical-rl;">SIGNAL_STRENGTH: NOMINAL</div>
+</aside>
+<!-- Footer -->
+<footer class="w-full py-12 border-t border-tertiary/20 bg-surface-container-lowest">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="font-label-caps text-label-caps text-primary mb-4 flex items-center gap-2">
+<img alt="APEX_CONSULT" class="w-6 h-6 object-contain" src="https://lh3.googleusercontent.com/aida/AP1WRLvkVH_ZUiqeOs96Pc8lkGVkpBB4tevLbN4EdWmYCAoiPAE_asgMMrhwO5Ox83VZhfZ5PcXnDdhAk-W2nR4ecu25Zvq8jDi8Y1iDJjYcbDUpEGE4gFlDzgfst6R7FTY6-cE5-hR0Jz22mV9bwYE8vCOM2tepqRxZOELGjMnTXK6rMRHWzHw3uE00zVSooDhoh0PUya8QzcG94DSkdi8BAafMY7YXkhkzL-siLPr8tzRqrm7KRYx1DjfOmtU"/>
+    APEX_CONSULT
+</div>
+<p class="font-label-mono text-[10px] text-on-surface-variant leading-relaxed">
+                    Precision engineering for the next generation of financial and technical infrastructure. High-frequency solutions for a low-latency world.
+                </p>
+</div>
+<div>
+<div class="font-label-caps text-label-caps text-on-surface mb-6">RESOURCES</div>
+<ul class="space-y-3 font-label-mono text-[12px]">
+<li><a class="text-on-surface-variant hover:text-tertiary transition-colors" href="#">Architecture</a></li>
+<li><a class="text-on-surface-variant hover:text-tertiary transition-colors" href="#">Privacy</a></li>
+<li><a class="text-on-surface-variant hover:text-tertiary transition-colors" href="#">Service Level Agreement</a></li>
+<li><a class="text-on-surface-variant hover:text-tertiary transition-colors" href="#">Network Status</a></li>
+</ul>
+</div>
+<div>
+<div class="font-label-caps text-label-caps text-on-surface mb-6">COMPLIANCE</div>
+<ul class="space-y-3 font-label-mono text-[12px]">
+<li><a class="text-on-surface-variant hover:text-tertiary transition-colors" href="#">SOC2_TYPE_II</a></li>
+<li><a class="text-on-surface-variant hover:text-tertiary transition-colors" href="#">ISO_27001</a></li>
+<li><a class="text-on-surface-variant hover:text-tertiary transition-colors" href="#">GDPR_CORE</a></li>
+</ul>
+</div>
+<div class="flex flex-col justify-end">
+<div class="font-label-mono text-[10px] text-tertiary uppercase mb-2">©2024 APEX SYSTEMS.</div>
+<div class="font-label-mono text-[10px] text-on-surface-variant">ALL RIGHTS RESERVED. LATENCY: 12ms.</div>
+</div>
+</div>
+</footer>
+<script>
+        // Subtle glitch effect for primary buttons
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('mouseenter', () => {
+                btn.style.transform = 'translate(1px, -1px)';
+                setTimeout(() => { btn.style.transform = 'translate(-1px, 1px)'; }, 50);
+                setTimeout(() => { btn.style.transform = 'translate(0, 0)'; }, 100);
+            });
+        });
+
+        // Background grid tracking (parallax feel)
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            document.body.style.backgroundPosition = `0px ${scrollY * 0.1}px`;
+        });
+    </script>
+</body></html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Xant Consulting — Consultoría tecnológica para empresas</title>
+<meta name="description" content="Xant Consulting: diagnóstico tecnológico, inventario, plan de renovación, evaluación de red, respaldos, seguridad y acompañamiento. Ensenada, BC."/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Geist:wght@300;400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link rel="icon" type="image/svg+xml" href="public/faviconBlanco.svg">
+<script id="tailwind-config">
+tailwind.config = { darkMode:"class", theme:{ extend:{ colors:{ "primary-fixed-dim":"#b3c5ff","tertiary":"#b9c8de","secondary-container":"#00d2fd","secondary-fixed-dim":"#3cd7ff","inverse-primary":"#0054d6","on-surface":"#e5e2e3","primary":"#b3c5ff","surface-bright":"#3a393a","on-primary-container":"#f8f7ff","surface-tint":"#b3c5ff","on-background":"#e5e2e3","surface-container-highest":"#353436","surface-container-lowest":"#0e0e0f","error":"#ffb4ab","outline":"#8c90a1","secondary":"#a2e7ff","secondary-fixed":"#b4ebff","primary-container":"#0066ff","inverse-on-surface":"#313031","error-container":"#93000a","on-primary-fixed":"#001849","surface-container":"#201f20","primary-fixed":"#dae1ff","surface-variant":"#353436","background":"#131314","on-surface-variant":"#c2c6d8","surface-container-high":"#2a2a2b","surface":"#131314","inverse-surface":"#e5e2e3","surface-container-low":"#1c1b1c","surface-dim":"#131314","outline-variant":"#424656","on-primary":"#002b75","xant-green":"#25D366" }, borderRadius:{ "DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem" }, spacing:{ "margin-mobile":"20px","gutter":"24px","margin-desktop":"64px","container-max":"1440px","unit":"4px" }, fontFamily:{ "display-lg-mobile":["Space Grotesk"],"label-mono":["JetBrains Mono"],"body-lg":["Geist"],"body-md":["Geist"],"label-caps":["JetBrains Mono"],"headline-md":["Space Grotesk"],"display-lg":["Space Grotesk"] }, fontSize:{ "display-lg-mobile":["40px",{lineHeight:"1.2",letterSpacing:"-0.02em",fontWeight:"700"}],"label-mono":["14px",{lineHeight:"1.0",letterSpacing:"0.05em",fontWeight:"500"}],"body-lg":["18px",{lineHeight:"1.6",fontWeight:"400"}],"body-md":["16px",{lineHeight:"1.6",fontWeight:"400"}],"label-caps":["12px",{lineHeight:"1.0",letterSpacing:"0.15em",fontWeight:"700"}],"headline-md":["32px",{lineHeight:"1.3",fontWeight:"600"}],"display-lg":["72px",{lineHeight:"1.1",letterSpacing:"-0.04em",fontWeight:"700"}] } } } }
+</script>
+<style>
+  .material-symbols-outlined { font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24; }
+  .technical-grid { background-size:40px 40px; background-image:linear-gradient(to right,rgba(179,197,255,0.04) 1px,transparent 1px),linear-gradient(to bottom,rgba(179,197,255,0.04) 1px,transparent 1px); }
+  @keyframes pulse-dot { 0%{transform:scale(0.95);opacity:0.7} 50%{transform:scale(1.2);opacity:1} 100%{transform:scale(0.95);opacity:0.7} }
+  .live-pulse { animation:pulse-dot 2s infinite; }
+  @keyframes fade-up { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+  .reveal { opacity:0; } .reveal.visible { animation:fade-up 0.7s ease-out forwards; }
+  .reveal-delay-1.visible { animation-delay:0.1s } .reveal-delay-2.visible { animation-delay:0.2s } .reveal-delay-3.visible { animation-delay:0.3s }
+  .tab-nav-btn { font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; padding:10px 18px; border:none; background:none; color:#8c90a1; cursor:pointer; border-bottom:2px solid transparent; transition:color 0.15s,border-color 0.15s; }
+  .tab-nav-btn:hover { color:#c2c6d8; } .tab-nav-btn.active { color:#b3c5ff; border-bottom-color:#b3c5ff; }
+</style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary selection:text-on-primary-container">
+
+<!-- NAVBAR -->
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-tertiary/20">
+  <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+    <a href="/" class="flex items-center gap-3"><img src="public/blanco.svg" alt="Xant" class="h-12 w-auto"/></a>
+    <div class="hidden md:flex gap-8">
+      <a href="/" class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors">Inicio</a>
+      <a href="/#servicios" class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors">Xant Fix</a>
+      <a href="/#web" class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors">Xant Web</a>
+      <a href="xant-hardware.html" class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors">Hardware</a>
+      <a href="xant-consulting.html" class="font-label-caps text-label-caps text-primary border-b border-primary pb-1">Consulting</a>
+    </div>
+    <a href="https://wa.me/526463077208" target="_blank" class="bg-xant-green text-white font-label-caps text-label-caps py-2 px-6 hover:brightness-110 transition-all flex items-center gap-2"><span class="material-symbols-outlined text-[16px]">chat</span> WhatsApp</a>
+  </div>
+</nav>
+
+<main class="relative pt-24 overflow-hidden technical-grid">
+
+<!-- HERO -->
+<section class="py-16 md:py-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto reveal">
+  <span class="font-label-mono text-label-mono text-primary">[ XANT_CONSULTING ]</span>
+  <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface uppercase mb-6 leading-none mt-4">CONSULTORÍA<span class="text-primary">.</span></h1>
+  <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-6">Evaluamos tu situación tecnológica, detectamos problemas, reducimos riesgos y definimos un plan de mejora. Análisis antes que recomendación.</p>
+  <div class="flex items-center gap-3 bg-surface-container-low w-fit px-4 py-1 border border-tertiary/20 rounded-sm"><span class="live-pulse w-2 h-2 rounded-full bg-secondary-container"></span><span class="font-label-mono text-label-mono text-secondary">DIAGNÓSTICO · PLANEACIÓN · ACOMPAÑAMIENTO</span></div>
+</section>
+
+<!-- TAB NAV -->
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-8 reveal reveal-delay-1" style="display:flex;flex-wrap:wrap;gap:2px;border-bottom:1px solid rgba(185,200,222,0.1);padding-bottom:0;">
+  <button class="tab-nav-btn active" data-tab="diagnostico">Diagnóstico</button>
+  <button class="tab-nav-btn" data-tab="inventario">Inventario</button>
+  <button class="tab-nav-btn" data-tab="evaluacion">Evaluación</button>
+  <button class="tab-nav-btn" data-tab="renovacion">Renovación</button>
+  <button class="tab-nav-btn" data-tab="estandarizacion">Estandarización</button>
+  <button class="tab-nav-btn" data-tab="red">Red</button>
+  <button class="tab-nav-btn" data-tab="respaldos">Respaldos</button>
+  <button class="tab-nav-btn" data-tab="seguridad">Seguridad</button>
+  <button class="tab-nav-btn" data-tab="software">Software</button>
+  <button class="tab-nav-btn" data-tab="digitalizacion">Digitalización</button>
+  <button class="tab-nav-btn" data-tab="plan-anual">Plan Anual</button>
+  <button class="tab-nav-btn" data-tab="acompanamiento">Acompañamiento</button>
+  <button class="tab-nav-btn" data-tab="proceso">Proceso</button>
+</div>
+
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+
+<!-- DIAGNÓSTICO -->
+<div class="hw-panel" id="tab-diagnostico">
+  <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter reveal">
+    <div class="md:col-span-12"><h2 class="font-headline-md text-headline-md text-on-surface mb-6">Diagnóstico Tecnológico General</h2></div>
+    <div class="md:col-span-7 bg-surface-container-low border border-tertiary/10 p-8">
+      <p class="font-body-md text-on-surface-variant mb-6">Evaluación inicial de la tecnología utilizada por la empresa. Analizamos la operación, los equipos, los procesos y las necesidades del negocio antes de recomendar.</p>
+      <div class="grid grid-cols-2 gap-2">
+        <span class="bg-background/50 border border-tertiary/10 px-3 py-2 font-label-mono text-[11px] text-on-surface-variant">Computadoras</span><span class="bg-background/50 border border-tertiary/10 px-3 py-2 font-label-mono text-[11px] text-on-surface-variant">Sistemas operativos</span><span class="bg-background/50 border border-tertiary/10 px-3 py-2 font-label-mono text-[11px] text-on-surface-variant">Software</span><span class="bg-background/50 border border-tertiary/10 px-3 py-2 font-label-mono text-[11px] text-on-surface-variant">Impresoras</span><span class="bg-background/50 border border-tertiary/10 px-3 py-2 font-label-mono text-[11px] text-on-surface-variant">Red básica</span><span class="bg-background/50 border border-tertiary/10 px-3 py-2 font-label-mono text-[11px] text-on-surface-variant">Almacenamiento</span><span class="bg-background/50 border border-tertiary/10 px-3 py-2 font-label-mono text-[11px] text-on-surface-variant">Respaldos</span><span class="bg-background/50 border border-tertiary/10 px-3 py-2 font-label-mono text-[11px] text-on-surface-variant">Seguridad</span><span class="bg-background/50 border border-tertiary/10 px-3 py-2 font-label-mono text-[11px] text-on-surface-variant">Licencias</span><span class="bg-background/50 border border-tertiary/10 px-3 py-2 font-label-mono text-[11px] text-on-surface-variant">Entrevistas</span>
+      </div>
+    </div>
+    <div class="md:col-span-5 bg-surface-container border border-primary/20 p-8">
+      <p class="font-label-caps text-label-caps text-primary mb-4">ENTREGABLES</p>
+      <ul class="space-y-2 font-label-mono text-[12px] text-on-surface-variant">
+        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-secondary flex-shrink-0"></span> Resumen de situación actual</li>
+        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-secondary flex-shrink-0"></span> Lista de hallazgos</li>
+        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-secondary flex-shrink-0"></span> Problemas prioritarios</li>
+        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-secondary flex-shrink-0"></span> Recomendaciones</li>
+        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-secondary flex-shrink-0"></span> Plan de acciones</li>
+        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-secondary flex-shrink-0"></span> Estimación preliminar</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- INVENTARIO -->
+<div class="hw-panel hidden" id="tab-inventario">
+  <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter reveal">
+    <div class="md:col-span-12"><h2 class="font-headline-md text-headline-md text-on-surface mb-6">Inventario Tecnológico</h2></div>
+    <div class="md:col-span-7 bg-surface-container-low border border-tertiary/10 p-8">
+      <p class="font-body-md text-on-surface-variant mb-4">Levantamiento y documentación de los activos tecnológicos de una empresa.</p>
+      <div class="grid grid-cols-2 gap-2 mb-6">
+        <span class="bg-background/50 border border-tertiary/10 px-3 py-2 font-label-mono text-[11px] text-on-surface-variant">Tipo · Marca · Modelo</span><span class="bg-background/50 border border-tertiary/10 px-3 py-2 font-label-mono text-[11px] text-on-surface-variant">N° de serie</span><span class="bg-background/50 border border-tertiary/10 px-3 py-2 font-label-mono text-[11px] text-on-surface-variant">RAM · Almacenamiento</span><span class="bg-background/50 border border-tertiary/10 px-3 py-2 font-label-mono text-[11px] text-on-surface-variant">SO · Usuario · Área</span><span class="bg-background/50 border border-tertiary/10 px-3 py-2 font-label-mono text-[11px] text-on-surface-variant">IP · Estado · Garantía</span><span class="bg-background/50 border border-tertiary/10 px-3 py-2 font-label-mono text-[11px] text-on-surface-variant">Software instalado</span>
+      </div>
+    </div>
+    <div class="md:col-span-5 bg-surface-container border border-primary/20 p-8">
+      <p class="font-label-caps text-label-caps text-primary mb-4">BENEFICIOS</p>
+      <ul class="space-y-2 font-label-mono text-[12px] text-on-surface-variant"><li>· Conocer activos disponibles</li><li>· Detectar equipos faltantes</li><li>· Identificar obsolescencia</li><li>· Facilitar renovaciones</li><li>· Planear presupuestos</li></ul>
+    </div>
+  </div>
+</div>
+
+<!-- EVALUACIÓN -->
+<div class="hw-panel hidden" id="tab-evaluacion">
+  <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter reveal">
+    <div class="md:col-span-12"><h2 class="font-headline-md text-headline-md text-on-surface mb-6">Evaluación de Equipos</h2></div>
+    <div class="md:col-span-12 bg-surface-container-low border border-tertiary/10 p-8">
+      <p class="font-body-md text-on-surface-variant mb-6">Análisis individual o grupal para determinar si cada computadora debe mantenerse, actualizarse o reemplazarse.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="bg-background/50 border border-tertiary/5 p-4"><p class="font-label-caps text-label-caps text-primary mb-2">Funcional</p><p class="font-label-mono text-[11px] text-on-surface-variant">Puede seguir operando sin cambios inmediatos.</p></div>
+        <div class="bg-background/50 border border-tertiary/5 p-4"><p class="font-label-caps text-label-caps text-secondary mb-2">Mejorable</p><p class="font-label-mono text-[11px] text-on-surface-variant">Extender vida útil mediante SSD, RAM o mantenimiento.</p></div>
+        <div class="bg-background/50 border border-tertiary/5 p-4"><p class="font-label-caps text-label-caps text-on-surface-variant mb-2">Limitado</p><p class="font-label-mono text-[11px] text-on-surface-variant">Temporal. Debe considerarse su reemplazo.</p></div>
+        <div class="bg-background/50 border border-error/10 p-4"><p class="font-label-caps text-label-caps text-error mb-2">Crítico</p><p class="font-label-mono text-[11px] text-on-surface-variant">Fallas o riesgos que afectan la operación.</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- RENOVACIÓN -->
+<div class="hw-panel hidden" id="tab-renovacion">
+  <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter reveal">
+    <div class="md:col-span-12"><h2 class="font-headline-md text-headline-md text-on-surface mb-6">Plan de Renovación Tecnológica</h2></div>
+    <div class="md:col-span-7 bg-surface-container-low border border-tertiary/10 p-8">
+      <p class="font-body-md text-on-surface-variant mb-4">Diseñamos un plan para reemplazar o actualizar equipos de forma ordenada, por etapas, evitando renovar todo al mismo tiempo.</p>
+      <div class="grid grid-cols-2 gap-2">
+        <span class="bg-background/50 border border-tertiary/10 px-3 py-2 font-label-mono text-[11px] text-on-surface-variant">Priorización</span><span class="bg-background/50 border border-tertiary/10 px-3 py-2 font-label-mono text-[11px] text-on-surface-variant">Etapas</span><span class="bg-background/50 border border-tertiary/10 px-3 py-2 font-label-mono text-[11px] text-on-surface-variant">Actualizar vs reemplazar</span><span class="bg-background/50 border border-tertiary/10 px-3 py-2 font-label-mono text-[11px] text-on-surface-variant">Costos estimados</span><span class="bg-background/50 border border-tertiary/10 px-3 py-2 font-label-mono text-[11px] text-on-surface-variant">Cronograma</span><span class="bg-background/50 border border-tertiary/10 px-3 py-2 font-label-mono text-[11px] text-on-surface-variant">Estandarización</span>
+      </div>
+    </div>
+    <div class="md:col-span-5 bg-surface-container border border-primary/20 p-8 flex flex-col justify-center">
+      <p class="font-label-caps text-label-caps text-primary mb-2">BENEFICIOS</p>
+      <ul class="font-label-mono text-[12px] space-y-2 text-on-surface-variant"><li>· Mejor control del presupuesto</li><li>· Menos interrupciones</li><li>· Reducción de compras urgentes</li><li>· Equipos por puesto</li><li>· Menor costo de soporte</li></ul>
+    </div>
+  </div>
+</div>
+
+<!-- ESTANDARIZACIÓN + COMPRA -->
+<div class="hw-panel hidden" id="tab-estandarizacion">
+  <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter reveal">
+    <div class="md:col-span-6 bg-surface-container-low border border-tertiary/10 p-8">
+      <h3 class="font-headline-md text-[22px] text-on-surface mb-4">Estandarización de Equipos</h3>
+      <p class="font-body-md text-on-surface-variant mb-4">Para empresas con configuraciones, programas y versiones diferentes entre computadoras.</p>
+      <ul class="font-label-mono text-[11px] space-y-1.5 text-on-surface-variant"><li class="flex items-center gap-2"><span class="w-1 h-1 bg-secondary"></span> Configuraciones mínimas por puesto</li><li class="flex items-center gap-2"><span class="w-1 h-1 bg-secondary"></span> Sistema operativo y programas autorizados</li><li class="flex items-center gap-2"><span class="w-1 h-1 bg-secondary"></span> Usuarios, carpetas, impresoras</li><li class="flex items-center gap-2"><span class="w-1 h-1 bg-secondary"></span> Políticas de actualización</li></ul>
+    </div>
+    <div class="md:col-span-6 bg-surface-container border border-primary/20 p-8">
+      <h3 class="font-headline-md text-[22px] text-on-surface mb-4">Consultoría para Compra</h3>
+      <p class="font-body-md text-on-surface-variant mb-4">Asesoría antes de adquirir computadoras, servidores o periféricos.</p>
+      <div class="flex flex-wrap gap-2"><span class="bg-background/50 border border-tertiary/10 px-3 py-1.5 font-label-mono text-[10px] text-on-surface-variant">Administrativo</span><span class="bg-background/50 border border-tertiary/10 px-3 py-1.5 font-label-mono text-[10px] text-on-surface-variant">Ventas</span><span class="bg-background/50 border border-tertiary/10 px-3 py-1.5 font-label-mono text-[10px] text-on-surface-variant">Operativo</span><span class="bg-background/50 border border-tertiary/10 px-3 py-1.5 font-label-mono text-[10px] text-on-surface-variant">Diseño</span><span class="bg-background/50 border border-tertiary/10 px-3 py-1.5 font-label-mono text-[10px] text-on-surface-variant">Desarrollo</span><span class="bg-background/50 border border-tertiary/10 px-3 py-1.5 font-label-mono text-[10px] text-on-surface-variant">Dirección</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- RED -->
+<div class="hw-panel hidden" id="tab-red">
+  <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter reveal">
+    <div class="md:col-span-12"><h2 class="font-headline-md text-headline-md text-on-surface mb-6">Revisión de Red e Infraestructura</h2></div>
+    <div class="md:col-span-7 bg-surface-container-low border border-tertiary/10 p-8">
+      <p class="font-body-md text-on-surface-variant mb-4">Evaluación básica de la infraestructura que conecta los equipos y servicios.</p>
+      <div class="grid grid-cols-2 gap-2">
+        <span class="bg-background/50 border border-tertiary/10 px-3 py-2 font-label-mono text-[11px] text-on-surface-variant">Proveedor internet</span><span class="bg-background/50 border border-tertiary/10 px-3 py-2 font-label-mono text-[11px] text-on-surface-variant">Módem/Router</span><span class="bg-background/50 border border-tertiary/10 px-3 py-2 font-label-mono text-[11px] text-on-surface-variant">Wi-Fi / Cobertura</span><span class="bg-background/50 border border-tertiary/10 px-3 py-2 font-label-mono text-[11px] text-on-surface-variant">Switches</span><span class="bg-background/50 border border-tertiary/10 px-3 py-2 font-label-mono text-[11px] text-on-surface-variant">IP / Carpetas</span><span class="bg-background/50 border border-tertiary/10 px-3 py-2 font-label-mono text-[11px] text-on-surface-variant">Cableado visible</span>
+      </div>
+    </div>
+    <div class="md:col-span-5 bg-surface-container border border-primary/20 p-8">
+      <p class="font-label-caps text-label-caps text-primary mb-4">RECOMENDACIONES</p>
+      <ul class="font-label-mono text-[12px] space-y-2 text-on-surface-variant"><li>· Cambio de router o AP</li><li>· Separación de redes</li><li>· Red para invitados</li><li>· Instalación de UPS</li><li>· Mejora de cobertura</li></ul>
+    </div>
+  </div>
+</div>
+
+<!-- RESPALDOS + SEGURIDAD -->
+<div class="hw-panel hidden" id="tab-respaldos">
+  <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter reveal">
+    <div class="md:col-span-6 bg-surface-container-low border border-tertiary/10 p-8">
+      <h3 class="font-headline-md text-[22px] text-on-surface mb-4">Revisión de Respaldos</h3>
+      <p class="font-body-md text-on-surface-variant mb-4">Evaluación del método para proteger la información del negocio: qué se respalda, dónde, frecuencia, verificación.</p>
+      <ul class="font-label-mono text-[11px] space-y-1.5 text-on-surface-variant"><li class="flex items-center gap-2"><span class="w-1 h-1 bg-secondary"></span> Respaldo automático</li><li class="flex items-center gap-2"><span class="w-1 h-1 bg-secondary"></span> Copia local + externa + nube</li><li class="flex items-center gap-2"><span class="w-1 h-1 bg-secondary"></span> Pruebas de restauración</li></ul>
+    </div>
+    <div class="md:col-span-6 bg-surface-container border border-primary/20 p-8">
+      <h3 class="font-headline-md text-[22px] text-on-surface mb-4">Revisión Básica de Seguridad</h3>
+      <p class="font-body-md text-on-surface-variant mb-4">Evaluación preventiva: actualizaciones, antivirus, contraseñas, accesos, Wi-Fi.</p>
+      <ul class="font-label-mono text-[11px] space-y-1.5 text-on-surface-variant"><li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary"></span> Contraseñas individuales y 2FA</li><li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary"></span> Eliminación de cuentas compartidas</li><li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary"></span> Actualización de sistemas</li></ul>
+      <p class="font-label-mono text-[10px] text-tertiary mt-4">Evaluación preventiva. No sustituye auditoría especializada de ciberseguridad.</p>
+    </div>
+  </div>
+</div>
+
+<div class="hw-panel hidden" id="tab-seguridad"><!-- same content handled above --></div>
+
+<!-- SOFTWARE + DIGITALIZACIÓN -->
+<div class="hw-panel hidden" id="tab-software">
+  <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter reveal">
+    <div class="md:col-span-6 bg-surface-container-low border border-tertiary/10 p-8">
+      <h3 class="font-headline-md text-[22px] text-on-surface mb-4">Software y Licenciamiento</h3>
+      <p class="font-body-md text-on-surface-variant mb-4">Identificamos qué herramientas necesita tu empresa y qué opciones se adaptan mejor.</p>
+      <ul class="font-label-mono text-[11px] space-y-1.5 text-on-surface-variant"><li>· Revisión de programas actuales</li><li>· Detección de duplicidad</li><li>· Software sin licencia</li><li>· Microsoft 365 / Google Workspace</li><li>· Herramientas de colaboración</li><li>· Reducción de costos</li></ul>
+    </div>
+    <div class="md:col-span-6 bg-surface-container border border-primary/20 p-8">
+      <h3 class="font-headline-md text-[22px] text-on-surface mb-4">Digitalización de Procesos</h3>
+      <p class="font-body-md text-on-surface-variant mb-4">Analizamos procesos manuales que podrían mejorarse mediante tecnología.</p>
+      <ul class="font-label-mono text-[11px] space-y-1.5 text-on-surface-variant"><li>· Registros en papel</li><li>· Hojas de cálculo aisladas</li><li>· Cotizaciones manuales</li><li>· Inventarios desactualizados</li><li>· Reportes manuales</li><li>· Mapeo y propuesta de mejora</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="hw-panel hidden" id="tab-digitalizacion"></div>
+
+<!-- PLAN ANUAL + ACOMPAÑAMIENTO -->
+<div class="hw-panel hidden" id="tab-plan-anual">
+  <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter reveal">
+    <div class="md:col-span-12"><h2 class="font-headline-md text-headline-md text-on-surface mb-6">Plan Tecnológico Anual</h2></div>
+    <div class="md:col-span-12 bg-surface-container-low border border-tertiary/10 p-8">
+      <p class="font-body-md text-on-surface-variant mb-6">Para empresas que necesitan planear sus mejoras tecnológicas durante los siguientes meses. Evita compras improvisadas y distribuye la inversión.</p>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+        <span class="bg-background/50 border border-tertiary/10 px-3 py-2 font-label-mono text-[11px] text-on-surface-variant">Diagnóstico inicial</span><span class="bg-background/50 border border-tertiary/10 px-3 py-2 font-label-mono text-[11px] text-on-surface-variant">Calendario mantenimiento</span><span class="bg-background/50 border border-tertiary/10 px-3 py-2 font-label-mono text-[11px] text-on-surface-variant">Renovación equipos</span><span class="bg-background/50 border border-tertiary/10 px-3 py-2 font-label-mono text-[11px] text-on-surface-variant">Presupuesto estimado</span><span class="bg-background/50 border border-tertiary/10 px-3 py-2 font-label-mono text-[11px] text-on-surface-variant">Mejoras de red</span><span class="bg-background/50 border border-tertiary/10 px-3 py-2 font-label-mono text-[11px] text-on-surface-variant">Respaldos</span><span class="bg-background/50 border border-tertiary/10 px-3 py-2 font-label-mono text-[11px] text-on-surface-variant">Capacitación</span><span class="bg-background/50 border border-tertiary/10 px-3 py-2 font-label-mono text-[11px] text-on-surface-variant">Indicadores</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="hw-panel hidden" id="tab-acompanamiento">
+  <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter reveal">
+    <div class="md:col-span-12"><h2 class="font-headline-md text-headline-md text-on-surface mb-6">Acompañamiento Tecnológico</h2></div>
+    <div class="md:col-span-12 bg-surface-container-low border border-tertiary/10 p-8">
+      <p class="font-body-md text-on-surface-variant mb-6">Para empresas sin personal interno de sistemas que necesitan apoyo para tomar decisiones. Reuniones periódicas, evaluación de proveedores, revisión de cotizaciones y seguimiento de proyectos.</p>
+      <p class="font-body-md text-on-surface-variant">Disponible por proyecto, bolsa de horas o iguala mensual.</p>
+    </div>
+  </div>
+</div>
+
+<!-- PROCESO -->
+<div class="hw-panel hidden" id="tab-proceso">
+  <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter reveal">
+    <div class="md:col-span-12"><h2 class="font-headline-md text-headline-md text-on-surface mb-8">Proceso de Consultoría</h2></div>
+    <div class="md:col-span-12">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4">
+        <div class="bg-surface-container-low border border-tertiary/10 p-6 text-center"><span class="bg-primary/10 p-2 border border-primary/20 text-primary font-label-mono text-[16px] inline-block mb-3">01</span><p class="font-label-caps text-label-caps text-on-surface mb-1">Reunión</p><p class="font-label-mono text-[11px] text-on-surface-variant">Objetivos y expectativas</p></div>
+        <div class="bg-surface-container border border-primary/20 p-6 text-center"><span class="bg-secondary/10 p-2 border border-secondary/20 text-secondary font-label-mono text-[16px] inline-block mb-3">02</span><p class="font-label-caps text-label-caps text-on-surface mb-1">Alcance</p><p class="font-label-mono text-[11px] text-on-surface-variant">Qué se evaluará</p></div>
+        <div class="bg-surface-container-low border border-tertiary/10 p-6 text-center"><span class="bg-primary/10 p-2 border border-primary/20 text-primary font-label-mono text-[16px] inline-block mb-3">03</span><p class="font-label-caps text-label-caps text-on-surface mb-1">Levantamiento</p><p class="font-label-mono text-[11px] text-on-surface-variant">Revisión y entrevistas</p></div>
+        <div class="bg-surface-container border border-primary/20 p-6 text-center"><span class="bg-secondary/10 p-2 border border-secondary/20 text-secondary font-label-mono text-[16px] inline-block mb-3">04</span><p class="font-label-caps text-label-caps text-on-surface mb-1">Análisis</p><p class="font-label-mono text-[11px] text-on-surface-variant">Hallazgos y prioridades</p></div>
+        <div class="bg-surface-container-low border border-tertiary/10 p-6 text-center"><span class="bg-primary/10 p-2 border border-primary/20 text-primary font-label-mono text-[16px] inline-block mb-3">05</span><p class="font-label-caps text-label-caps text-on-surface mb-1">Resultados</p><p class="font-label-mono text-[11px] text-on-surface-variant">Documento y recomendaciones</p></div>
+        <div class="bg-surface-container border border-primary/20 p-6 text-center"><span class="bg-secondary/10 p-2 border border-secondary/20 text-secondary font-label-mono text-[16px] inline-block mb-3">06</span><p class="font-label-caps text-label-caps text-on-surface mb-1">Implementación</p><p class="font-label-mono text-[11px] text-on-surface-variant">Opcional, a solicitud</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /content -->
+
+<!-- CTA -->
+<div class="text-center py-16 reveal">
+  <p class="font-headline-md text-headline-md text-on-surface mb-4">¿Tu empresa necesita una evaluación tecnológica?</p>
+  <p class="font-body-lg text-body-lg text-on-surface-variant mb-8">Recibís recomendaciones claras, priorizadas y adaptadas a tu operación y presupuesto.</p>
+  <a href="https://wa.me/526463077208?text=Hola,%20quiero%20consultoría%20tecnológica%20Xant" target="_blank" class="bg-xant-green text-white px-8 py-4 font-label-caps text-label-caps font-bold hover:brightness-110 transition-all inline-flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">chat</span> SOLICITAR CONSULTORÍA</a>
+</div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="w-full py-12 bg-surface-container-lowest border-t border-tertiary/20">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+    <div><div class="flex items-center gap-2 mb-6"><img src="public/blanco.svg" alt="Xant" class="h-6 w-auto"/><div class="font-label-caps text-label-caps text-primary">XANT</div></div><p class="font-label-mono text-[12px] text-on-surface-variant leading-relaxed">CONSULTORÍA TECNOLÓGICA<br/>ENSENADA, BAJA CALIFORNIA</p></div>
+    <div class="space-y-4"><h5 class="font-label-caps text-label-caps text-tertiary mb-2">SERVICIOS</h5><nav class="flex flex-col gap-2"><a href="/" class="font-label-mono text-[12px] text-on-surface-variant hover:text-tertiary hover:underline">Inicio</a><a href="/#servicios" class="font-label-mono text-[12px] text-on-surface-variant hover:text-tertiary hover:underline">Xant Fix</a><a href="/#web" class="font-label-mono text-[12px] text-on-surface-variant hover:text-tertiary hover:underline">Xant Web</a><a href="xant-hardware.html" class="font-label-mono text-[12px] text-on-surface-variant hover:text-tertiary hover:underline">Xant Hardware</a></nav></div>
+    <div class="space-y-4"><h5 class="font-label-caps text-label-caps text-tertiary mb-2">LEGAL</h5><nav class="flex flex-col gap-2"><a href="/aviso-de-privacidad.html" class="font-label-mono text-[12px] text-on-surface-variant hover:text-tertiary hover:underline">Aviso de Privacidad</a><a href="/terminos-y-condiciones.html" class="font-label-mono text-[12px] text-on-surface-variant hover:text-tertiary hover:underline">Términos y Condiciones</a></nav></div>
+    <div class="space-y-4"><h5 class="font-label-caps text-label-caps text-tertiary mb-2">CONTACTO</h5><p class="font-label-mono text-[12px] text-on-surface-variant">Status: <span class="text-secondary-container">ONLINE</span></p><a href="https://wa.me/526463077208" target="_blank" class="inline-flex items-center gap-2 bg-xant-green text-white font-label-caps text-label-caps py-2 px-4 hover:brightness-110 transition-all mt-2"><span class="material-symbols-outlined text-[14px]">chat</span> WhatsApp</a></div>
+    <div class="col-span-full mt-8 pt-6 border-t border-tertiary/10 flex justify-between items-center"><div class="font-label-mono text-[10px] text-tertiary/50">© 2025 Xant Desarrollo e Ingeniería · Ensenada, BC, México</div><a href="https://wa.me/526463077208" target="_blank" class="font-label-mono text-[10px] text-tertiary/40 hover:text-primary transition-colors">WhatsApp →</a></div>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/526463077208?text=Hola,%20me%20interesa%20consultoría%20tecnológica" target="_blank" class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-xant-green flex items-center justify-center shadow-lg hover:scale-110 transition-transform" title="WhatsApp"><span class="material-symbols-outlined text-white text-2xl">chat</span></a>
+
+<script>
+(function(){
+  var tabs=document.querySelectorAll('.tab-nav-btn'),panels=document.querySelectorAll('.hw-panel');
+  tabs.forEach(function(t){t.addEventListener('click',function(){var id=this.getAttribute('data-tab');tabs.forEach(function(b){b.classList.remove('active')});this.classList.add('active');panels.forEach(function(p){p.classList.toggle('hidden',p.id!=='tab-'+id)})})});
+  var reveals=document.querySelectorAll('.reveal');
+  var obs=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+  reveals.forEach(function(e){obs.observe(e)});
+})();
+</script>
+</body>
+</html>
